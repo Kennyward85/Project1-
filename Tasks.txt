@@ -1,0 +1,7 @@
+TASKS.md
+
+1. Create basic html layout css and JS/Jquery (Joyce & Jess)
+2. Primarily work on JS to link the apis and create the query searches to pull the responses we need (Mark & Kenneth)
+3. Create the buttons and a nav bar that pull the information from the Api console log to make sure they are grabbing the data we want (Joyce)
+4. Once the buttons and NAV bar are working properly begin to make sure the Html has the proper classes and Ids to place the information where we want it (Jess)
+5. Once the js and html are formatted and functional start to implement the Css to create the look of the site that we want (Everyone)
