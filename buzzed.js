@@ -1,3 +1,16 @@
+//Search by cocktail name hide
+$(".user-chose-cocktail").hide();
+$("#cocktail-name-btn").click(function(){
+    $(".user-chose-cocktail").show();
+    $("#cocktail-name-btn").hide();
+  });
+  //Search by ingredient name hide
+  $(".user-chose-ingredient").hide();
+$("#ingredient-name-btn").click(function(){
+    $(".user-chose-ingredient").show();
+    $("#ingredient-name-btn").hide();
+  });
+
 $(document).ready(function () {
     var apiKey = "9973533"
     var popularDrinkUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/popular.php";
