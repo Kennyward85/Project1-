@@ -22,6 +22,7 @@ function searchbyName (nameInput) {
             type: "GET",
             url: drinkNameUrl
         }).then(function (response) {
+            console.log(response)
         for (var i = 0; i <= response.drinks.length; i++){
         var glass = response.drinks[i].strGlass;
         var instruction = response.drinks[i].strInstructions;
