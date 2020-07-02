@@ -15,13 +15,15 @@ $(document).ready(function () {
     var apiKey = "9973533"
     var popularDrinkUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/popular.php";
     var randomUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/randomselection.php";
-function searchbyName (nameInput) {
+
+    function searchbyName (nameInput) {
     var drinkNameUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/search.php?s=" + nameInput;
         console.log(nameInput);
         $.ajax({
             type: "GET",
             url: drinkNameUrl
         }).then(function (response) {
+            $("#contents").empty();
         for (var i = 0; i <= response.drinks.length; i++){
         var glass = response.drinks[i].strGlass;
         var instruction = response.drinks[i].strInstructions;
@@ -37,11 +39,41 @@ function searchbyName (nameInput) {
     }
 })
 }
+
+
+
+function searchRandom () {
+
+    var randomDrink = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/randomselection.php";
+    
+        $.ajax({
+            url: randomDrink,
+            method: "GET"
+        }).then(function (response) {
+            $("#contents").empty();
+            for (var i = 0; i <= response.drinks.length; i++){
+            console.log(response);
+            var glass = response.drinks[i].strGlass;
+            var instruction = response.drinks[i].strInstructions;
+            var drinkName = response.drinks[i].strDrink;
+            var image = response.drinks[i].strDrinkThumb;
+            var video = response.drinks[i].strVideo;
+            var drinkNameEl = $("<h1>").text("Name of the drink :" + drinkName);
+            var glassEl = $("<div>").text("Best glass for this drink :" + glass)
+            var instructionEl = $("<div>").text("Instruction :" + instruction);
+            var imageUrl = $("<img>").attr("src", image);
+            $("#contents").append($("<div>"));
+            $("#contents").append(drinkNameEl, glassEl, instructionEl, imageUrl);
+        }
+    })
+} 
+    
+ 
 // need for loop for(strIngredients && strMesure)
 function searchbyIngredient (ingInput) {
     var ingNameUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/search.php?i=" + ingInput;
         console.log(ingInput);
-        console.log(ingNameUrl);
+        // console.log(ingNameUrl);
         $.ajax({
             type: "GET",
             url: ingNameUrl
@@ -69,4 +101,10 @@ $("#ingredient-search").on("click", function(event) {
                 $('#ingredient-search').click();//Trigger search button click event
             }
         });
+
+$(".random-name").on("click", function(event) {
+    event.preventDefault();
+    var random = $(".random-name").val().trim();
+    searchRandom();
 });
+ });       
