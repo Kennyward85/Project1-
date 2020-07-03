@@ -27,13 +27,26 @@ Store-Img {
     justify-content: space-between;
 }
 
-.row {
-    display: -ms-flexbox;
+.main-page-card {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+.results-container {
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
+    justify-content: space-between;
+}
+
+
+
+.custom {
+    width: 250px;
+  
+}
+
+#deck {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }

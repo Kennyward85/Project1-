@@ -1,13 +1,12 @@
 //Search by cocktail name hide
-$(".user-chose-cocktail").hide();
-$("#cocktail-name-btn").click(function(){
-    $(".user-chose-cocktail").show();
-    $("#cocktail-name-btn").hide();
+$(".search-by-cocktail").hide();
+$(".search-cocktail-btn").hide();
+$("#cocktail-ingredient-btn").click(function(){
+    $(".search-by-cocktail").show();
+    $(".search-cocktail-btn").show()
+    $("#cocktail-ingredient-btn").hide();
   });
-  //Search by ingredient name hide
-  $(".user-chose-ingredient").hide();
-$("#ingredient-name-btn").click(function(){
-    });
+
 
 $(document).ready(function () {
     var apiKey = "9973533"
