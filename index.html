@@ -22,9 +22,9 @@
 
       <!--Search by cocktail name card (main page)-->
       <div class="card" style="width: 22rem;">
-        <img
+        <!-- <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
-          class="card-img-top" alt="...">
+          class="card-img-top" alt="..."> -->
         <div class="card-body">
           <p class="card-text">Search for a given cocktail by name.<br><br>
             If you are looking to search for a specific cocktail, regardless of your bar stock, choose this option!​​
@@ -50,13 +50,13 @@
 
 <!--Search by ingredient card (main page)-->
       <div class="card" style="width: 22rem;">
-        <img
+        <!-- <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
-          class="card-img-top" alt="...">
+          class="card-img-top" alt="..."> -->
         <div class="card-body">
-          <p class="card-text">Create amazing cocktails using only the ingredients you have available.<br><br>
-            If you want only cocktails you can make right now, choose this option!</p>
-          <button type="button" class="btn btn-secondary ingredient-name" id="ingredient-name-btn">Search by ingredient</button>
+          <p class="card-text">Need to find a local liquor store?<br><br><br><br><br>
+            </p>
+          <button type="button" class="btn btn-secondary ingredient-name" id="ingredient-name-btn" onclick="getLocation()">Find a Liquor Store</button>
           <div class="input-group user-chose-ingredient">
             <input type="text" class="form-control search-by-ingredient" placeholder="">
             <div class="input-group-append">
@@ -76,9 +76,9 @@
 
   
       <div class="card" style="width: 22rem;">
-        <img
+        <!-- <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
-          class="card-img-top" alt="...">
+          class="card-img-top" alt="..."> -->
         <div class="card-body">
           <p class="card-text">Don't know what you want? <br><br><br>
 
@@ -90,6 +90,11 @@
     </div>
     <div class="row" id="contents">
       
+    </div>
+
+    <div id="deck" class="row">
+      
+
     </div>
   </container>
 
@@ -113,5 +118,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="buzzed.js"></script>
 </body>
+
+
+
+
+
+
 
 </html>
