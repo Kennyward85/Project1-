@@ -7,6 +7,7 @@
   <title>BarMaid</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -17,50 +18,65 @@
     </div>
   </div>
 
-  <container>
+  <container class="main-page">
     <div class="row">
 
-      <!--Search by cocktail name card (main page)-->
-      <div class="card" style="width: 22rem;">
+      <!--Search by cocktail name  or ingredient card (main page)-->
+      <div class="card main-page-card text-center " style="width: 24rem;">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
           class="card-img-top" alt="...">
         <div class="card-body">
-          <p class="card-text">Search for a given cocktail by name.<br><br>
-            If you are looking to search for a specific cocktail, regardless of your bar stock, choose this option!​​
+          <p class="card-text"> Search for cocktail by name or any ingredient.<br><br>
+            If you are looking to search for a specific cocktail, or see what you can make regardless of your bar stock,
+            choose this option! <br><br>
           </p>
-          <button type="button" class="btn btn-secondary cocktail-name" id="cocktail-name-btn">Search by cocktail name</button>
-       
-        <div class="input-group user-chose-cocktail">
-          <input type="text" class="form-control search-by-cocktail" placeholder="">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary search-by-cocktail-btn" type="button" id="cocktail-search"><svg
-                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                  d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                <path fill-rule="evenodd"
-                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-              </svg></button>
+          <button type="button" class="btn btn-secondary custom cocktail-ingredient" id="cocktail-ingredient-btn">Search for cocktails</button>
+          <div class="input-group user-chose-cocktail">
+            <input type="text" class="form-control search-by-cocktail" placeholder="">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary search-by-cocktail-btn" type="button" id="cocktail-search"><svg
+                  width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                  <path fill-rule="evenodd"
+                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg></button>
+            </div>
           </div>
+
         </div>
-     
-      </div>
       </div>
 
-<!--Search by ingredient card (main page)-->
-      <div class="card" style="width: 22rem;">
+      <!--Random cocktail card (main page)-->
+      <div class="card main-page-card text-center " style="width: 24rem;">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
+          class="card-img-top" alt="...">
+        <div class="card-body"><br>
+          <p class="card-text">Don't know what you want? <br><br><br>
+
+            Let us decide for you! </p><br>
+
+          <button type="button" class="btn btn-secondary custom random-name" id="random-btn">Suprise me!</button>
+        </div>
+      </div>
+      <!-- </div> -->
+
+      <!--Search by ingredient card (main page)-->
+      <div class="card main-page-card text-center " style="width: 24rem;">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
           class="card-img-top" alt="...">
         <div class="card-body">
-          <p class="card-text">Create amazing cocktails using only the ingredients you have available.<br><br>
-            If you want only cocktails you can make right now, choose this option!</p>
-          <button type="button" class="btn btn-secondary ingredient-name" id="ingredient-name-btn">Search by ingredient</button>
-          <div class="input-group user-chose-ingredient">
-            <input type="text" class="form-control search-by-ingredient" placeholder="">
+          <p class="card-text">Don't have everything you need to make your cocktail?<br><br> Search for a nearby liquor
+            store and grab all the ingredients you need</p><br>
+          <button type="button" class="btn btn-secondary custom store-locator" id="store-locator-btn">Find a Sore</button>
+          <div class="input-group user-chose-store">
+            <input type="text" class="form-control search-by-store" placeholder="">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary search-by-ingredient-btn" type="button" id="ingredient-search"><svg
+              <button class="btn btn-outline-secondary search-by-store-btn" type="button" id="store-search"><svg
                   width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -72,41 +88,16 @@
           </div>
         </div>
       </div>
-
-
-  
-      <div class="card" style="width: 22rem;">
-        <img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAG1BMVEXMzMyWlpbFxcWxsbG3t7ecnJyjo6O+vr6qqqqUhI1cAAABC0lEQVR4nO3U7YrDIBCFYccZP+7/itfRmES6+VfDLrwPlEo54HGSGgIAAAAAAAAAAAAAAAAAAAD+NWkflUZ9kZI9hc7UU+ibqu9Ys6qWEExUJT6EZuop9EXWzt++8nH63GZRfWrBN45i99BMXaFtYrFeq4zT+xAs9WWqbTpLaKZuoY3FfEfJItXXbccydjQxKUvoSN1Du2tpLEnHelRos/Gia62eWkJ7a7n2XJZBqNhnqKVenJYrsr42KeVfarXUa+9Wf6M1H3+y8ew0lWtcvdZM3UJ7a4WUrT+zfiWV8bOFmpbQTF2h3bVKlnFxnxe4V4rnuEatmXrjlgcAAAAAAAAAAAAAAAAAAH/cD4mjA82Or0YGAAAAAElFTkSuQmCC"
-          class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Don't know what you want? <br><br><br>
-
-            Let us decide for you! </p><br>
-
-           <button type="button" class="btn btn-secondary random-name" id="random-btn">Suprise me!</button>
-        </div>
-      </div>
     </div>
-    <div class="row" id="contents">
-      
+
     </div>
   </container>
 
-  <!--If they want to search by cocktail. Hide until #cocktail-name-btn is clicked-->
-  <container class="search-by-cocktail-name">
-    <div class="cocktail-results"></div>
-  
-</container>
-  <!--If they want to search by ingredient. Hide until #ingreient-name-btn is clicked-->
-  <container class="search-by-ingredient-name">
-    <div class="ingredient-results"></div>
-  
-</container>
-  <!--If user wants random cocktail. Hide until #random-name is clicked-->
-  <container class="search-by-random-cocktail">
-    <div class="random-results"></div>
-</container>
+  <!--results-->
+  <container class="results-container">
+    <div class="row mx-auto" id="contents">
+    </div>
+  </container>
 
   <!--Java-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
