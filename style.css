@@ -50,4 +50,31 @@ Store-Img {
     display: flex;
     justify-content: space-between;
 }
+
+.results-card {
+    height: auto;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 30px;
+
+}
+
+.store-list {
+    list-style-type: none;
+}
+
+.store-list-card {
+    margin-bottom: 15px;
+    height: auto;
+    width: 30rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.store-card {
+    margin-right: auto;
+    margin-left: auto;
+}
+.ingredients-list {
+    margin-bottom: 20px;
 }
