@@ -27,7 +27,7 @@ $(document).ready(function () {
                 var drinkName = response.drinks[i].strDrink;
                 var image = response.drinks[i].strDrinkThumb;
                 var video = response.drinks[i].strVideo;
-              
+
 
 
 
@@ -53,50 +53,80 @@ $(document).ready(function () {
 
         var ingreds = '<ul class="list-group list-group-flush ingredients-list">';
         var fact = "";
-        if (i1 != null) {
+        if (i1 != null && m1 != null) {
             fact += "<li class='list-group-item'>" + m1 + " " + i1 + "</li>"
+        } else if (i1 != null) {
+            fact += "<li class='list-group-item'>" + " " + i1 + "</li>"
         }
-        if (i2 != null) {
+        if (i2 != null && m2 != null) {
             fact += "<li class='list-group-item'>" + m2 + " " + i2 + "</li>"
+        } else if (i2 != null) {
+            fact += "<li class='list-group-item'>" + " " + i2 + "</li>"
         }
-        if (i3 != null) {
+        if (i3 != null && m3 != null) {
             fact += "<li class='list-group-item'>" + m3 + " " + i3 + "</li>"
-        }
-        if (i4 != null) {
+        } else if (i3 != null) {
+            fact += "<li class='list-group-item'>" + " " + i3 + "</li>"
+            }
+        if (i4 != null && m4 != null) {
             fact += "<li class='list-group-item'>" + m4 + " " + i4 + "</li>"
+        } else if (i4 != null) {
+            fact += "<li class='list-group-item'>" + " " + i4 + "</li>"
         }
-        if (i5 != null) {
+        if (i5 != null && m5 != null) {
             fact += "<li class='list-group-item'>" + m5 + " " + i5 + "</li>"
+        } else if (i5 != null) {
+            fact += "<li class='list-group-item'>" + " " + i5 + "</li>"
         }
-        if (i6 != null) {
+        if (i6 != null && m6 != null) {
             fact += "<li class='list-group-item'>" + m6 + " " + i6 + "</li>"
+        } else if (i6 != null) {
+            fact += "<li class='list-group-item'>" + " " + i6 + "</li>"
         }
-        if (i7 != null) {
+        if (i7 != null && m7 != null) {
             fact += "<li class='list-group-item'>" + m7 + " " + i7 + "</li>"
+        } else if (i7 != null) {
+            fact += "<li class='list-group-item'>" + " " + i7 + "</li>"
         }
-        if (i8 != null) {
+        if (i8 != null && m8 != null) {
             fact += "<li class='list-group-item'>" + m8 + " " + i8 + "</li>"
+        } else if (i8 != null) {
+            fact += "<li class='list-group-item'>" + " " + i8 + "</li>"
         }
-        if (i9 != null) {
+        if (i9 != null && m9 != null) {
             fact += "<li class='list-group-item'>" + m9 + " " + i9 + "</li>"
+        } else if (i9 != null) {
+            fact += "<li class='list-group-item'>" + " " + i9 + "</li>"
         }
-        if (i10 != null) {
+        if (i10 != null && m10 != null) {
             fact += "<li class='list-group-item'>" + m10 + " " + i10 + "</li>"
+        } else if (i10 != null) {
+            fact += "<li class='list-group-item'>" + " " + i10 + "</li>"
         }
-        if (i11 != null) {
+        if (i11 != null && m11 != null) {
             fact += "<li class='list-group-item'>" + m11 + " " + i11 + "</li>"
+        } else if (i11 != null) {
+            fact += "<li class='list-group-item'>" + " " + i11 + "</li>"
         }
-        if (i12 != null) {
+        if (i12 != null && m12 != null) {
             fact += "<li class='list-group-item'>" + m12 + " " + i12 + "</li>"
+        } else if (i12 != null) {
+            fact += "<li class='list-group-item'>" + " " + i12 + "</li>"
         }
-        if (i13 != null) {
+        if (i13 != null && m13 != null) {
             fact += "<li class='list-group-item'>" + m13 + " " + i13 + "</li>"
+        } else if (i13 != null) {
+            fact += "<li class='list-group-item'>" + " " + i13 + "</li>"
         }
-        if (i14 != null) {
+        if (i14 != null && m14 != null) {
             fact += "<li class='list-group-item'>" + m14 + " " + i14 + "</li>"
+        } else if (i14 != null) {
+            fact += "<li class='list-group-item'>" + " " + i14 + "</li>"
         }
-        if (i15 != null) {
+        if (i15 != null && m15 != null) {
             fact += "<li class='list-group-item'>" + m15 + " " + i15 + "</li>"
+        } else if (i15 != null) {
+            fact += "<li class='list-group-item'>" + " " + i15 + "</li>"
         }
         fact += "</ul>";
 
@@ -167,11 +197,11 @@ $(document).ready(function () {
             $('#cocktail-search').click();
     });
 
-$(".random-name").on("click", function (event) {
-    event.preventDefault();
+    $(".random-name").on("click", function (event) {
+        event.preventDefault();
 
-    searchRandom();
-});
+        searchRandom();
+    });
 });
 $(".find-store").on("click", function (event) {
     event.preventDefault();
@@ -231,33 +261,3 @@ function httpGet(theUrl) {
 
 //Show & Hide functions on click 
 
-$(".search-cocktail-btn").click(function () {
-    $(".main-page-img").hide();
-    $(".user-choice-cocktail").hide();
-    $(".cocktail-ingredient").show();
-    $(".card-text").hide();
-
-
-});
-
-$("#random-btn").click(function () {
-    $(".main-page-img").hide();
-    $(".user-choice-cocktail").hide();
-    $(".cocktail-ingredient").show();
-    $(".card-text").hide();
-
-});
-
-$("#store-locator-btn").click(function () {
-    $(".main-page-img").hide();
-    $(".user-choice-cocktail").hide();
-    $(".cocktail-ingredient").show();
-    $(".card-text").hide();
-
-});
-
-
-
-$(".search-cocktail-btn").click(function () {
-    $(".main-page-card").css('height', '90px')
-});
