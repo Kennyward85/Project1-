@@ -27,23 +27,29 @@ $(document).ready(function () {
                 var drinkName = response.drinks[i].strDrink;
                 var image = response.drinks[i].strDrinkThumb;
                 var video = response.drinks[i].strVideo;
-                var drinkNameEl = $("<h1>").text("Name of the drink :" + drinkName);
-                var glassEl = $("<div>").text("Best glass for this drink :" + glass)
-                var instructionEl = $("<div>").text("Instruction :" + instruction);
-                var imageUrl = $("<img>").attr("src", image);
+              
 
 
 
-
-                $("#deck").append(cardBuilder(instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2, response.drinks[i].strMeasure3, response.drinks[i].strMeasure4, response.drinks[i].strMeasure5, response.drinks[i].strMeasure5, response.drinks[i].strMeasure7, response.drinks[i].strMeasure8, response.drinks[i].strMeasure9, response.drinks[i].strMeasure10, response.drinks[i].strMeasure11, response.drinks[i].strMeasure12, response.drinks[i].strMeasure13, response.drinks[i].strMeasure14, response.drinks[i].strMeasure15, response.drinks[i].strIngredient1, response.drinks[i].strIngredient2, response.drinks[i].strIngredient3, response.drinks[i].strIngredient4, response.drinks[i].strIngredient5, response.drinks[i].strIngredient6, response.drinks[i].strIngredient7, response.drinks[i].strIngredient8, response.drinks[i].strIngredient9, response.drinks[i].strIngredient10, response.drinks[i].strIngredient11, response.drinks[i].strIngredient12, response.drinks[i].strIngredient13, response.drinks[i].strIngredient14, response.drinks[i].strIngredient15));
+                $("#deck").append(cardBuilder
+                    (instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2, response.drinks[i].strMeasure3,
+                        response.drinks[i].strMeasure4, response.drinks[i].strMeasure5, response.drinks[i].strMeasure5, response.drinks[i].strMeasure7,
+                        response.drinks[i].strMeasure8, response.drinks[i].strMeasure9, response.drinks[i].strMeasure10, response.drinks[i].strMeasure11,
+                        response.drinks[i].strMeasure12, response.drinks[i].strMeasure13, response.drinks[i].strMeasure14, response.drinks[i].strMeasure15,
+                        response.drinks[i].strIngredient1, response.drinks[i].strIngredient2, response.drinks[i].strIngredient3, response.drinks[i].strIngredient4,
+                        response.drinks[i].strIngredient5, response.drinks[i].strIngredient6, response.drinks[i].strIngredient7, response.drinks[i].strIngredient8,
+                        response.drinks[i].strIngredient9, response.drinks[i].strIngredient10, response.drinks[i].strIngredient11, response.drinks[i].strIngredient12,
+                        response.drinks[i].strIngredient13, response.drinks[i].strIngredient14, response.drinks[i].strIngredient15));
 
             }
         })
     }
 
-    function cardBuilder(xinstructions, xdrinkName, ximgUrl, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15) {
+    function cardBuilder(xinstructions, xdrinkName, ximgUrl, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15,
+        i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15) {
 
-        var cardstring = ' <div style="width: 24rem;" class="card results-card"><img class="card-img" src="' + ximgUrl + '" alt="Drink"><div class="card-body"><h5 class="card-title">' + xdrinkName + '</h5><p class="card-text">' + xinstructions + '</p>';
+        var cardstring = ' <div style="width: 24rem;" class="card results-card"><img class="card-img" src="' + ximgUrl +
+            '"alt="Drink"><div class="card-body"><h5 class="card-title">' + xdrinkName + '</h5><p class="card-text">' + xinstructions + '</p>';
 
         var ingreds = '<ul class="list-group list-group-flush ingredients-list">';
         var fact = "";
@@ -107,51 +113,6 @@ $(document).ready(function () {
 
     var x = document.getElementById("deck");
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-
-    function showPosition(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-
-        const callUrl = "https://api.tomtom.com/search/2/search/liquor.json?limit=7&countrySet=US&lat=" + lat + "&lon=" + lon + "&radius=24000&idxSet=POI&key=BO3DEG2RkU2YkDwYIQ02rcQRRdtnl972";
-
-        var json = httpGet(callUrl);
-
-        var storeListing = JSON.parse(json);
-
-        var html = "<div class='card'><div class='card-header'><h2>Local Stores</h2></div><div class='card-body'><ul>";
-        for (var i = 0; i < storeListing.results.length; i++) {
-
-            //var maplink = "http://maps.google.com/maps?q=" + storeListing.results[i].position.lat + "," + storeListing.results[i].position.lon;
-            var maplink = "http://maps.google.com/maps?q=" + storeListing.results[i].poi.name + "/@@" + storeListing.results[i].position.lat + "," + storeListing.results[i].position.lon;
-            html += "<div class='card'><li><strong><a href='" + maplink + "'>" + storeListing.results[i].poi.name +
-                "</a></strong><br/>" + storeListing.results[i].address.freeformAddress +
-                "</li> </div>";
-
-
-        }
-
-        html += "</ul></div>";
-        x.innerHTML = "";
-        x.innerHTML = html;
-
-    }
-
-    function httpGet(theUrl) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, false);
-        xmlHttp.send(null);
-        return xmlHttp.responseText;
-
-    }
-
 
     function searchRandom() {
         $("#deck").empty();
@@ -176,16 +137,25 @@ $(document).ready(function () {
                 var instructionEl = $("<div>").text("Instruction :" + instruction);
                 var imageUrl = $("<img>").attr("src", image);
 
-                $("#deck").append(cardBuilder(instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2, response.drinks[i].strMeasure3, response.drinks[i].strMeasure4, response.drinks[i].strMeasure5, response.drinks[i].strMeasure5, response.drinks[i].strMeasure7, response.drinks[i].strMeasure8, response.drinks[i].strMeasure9, response.drinks[i].strMeasure10, response.drinks[i].strMeasure11, response.drinks[i].strMeasure12, response.drinks[i].strMeasure13, response.drinks[i].strMeasure14, response.drinks[i].strMeasure15, response.drinks[i].strIngredient1, response.drinks[i].strIngredient2, response.drinks[i].strIngredient3, response.drinks[i].strIngredient4, response.drinks[i].strIngredient5, response.drinks[i].strIngredient6, response.drinks[i].strIngredient7, response.drinks[i].strIngredient8, response.drinks[i].strIngredient9, response.drinks[i].strIngredient10, response.drinks[i].strIngredient11, response.drinks[i].strIngredient12, response.drinks[i].strIngredient13, response.drinks[i].strIngredient14, response.drinks[i].strIngredient15));
+                $("#deck").append(cardBuilder(
+                    instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2,
+                    response.drinks[i].strMeasure3, response.drinks[i].strMeasure4, response.drinks[i].strMeasure5,
+                    response.drinks[i].strMeasure5, response.drinks[i].strMeasure7, response.drinks[i].strMeasure8,
+                    response.drinks[i].strMeasure9, response.drinks[i].strMeasure10, response.drinks[i].strMeasure11,
+                    response.drinks[i].strMeasure12, response.drinks[i].strMeasure13, response.drinks[i].strMeasure14,
+                    response.drinks[i].strMeasure15, response.drinks[i].strIngredient1, response.drinks[i].strIngredient2,
+                    response.drinks[i].strIngredient3, response.drinks[i].strIngredient4, response.drinks[i].strIngredient5,
+                    response.drinks[i].strIngredient6, response.drinks[i].strIngredient7, response.drinks[i].strIngredient8,
+                    response.drinks[i].strIngredient9, response.drinks[i].strIngredient10, response.drinks[i].strIngredient11,
+                    response.drinks[i].strIngredient12, response.drinks[i].strIngredient13, response.drinks[i].strIngredient14,
+                    response.drinks[i].strIngredient15));
 
                 $("#contents").append($("<div>"));
-                //            $("#contents").append(drinkNameEl, glassEl, instructionEl, imageUrl);
+
             }
         })
     }
 
-
-    // need for loop for(strIngredients && strMesure)
 
     $("#cocktail-search").on("keypress click", function (event) {
         event.preventDefault();
@@ -193,16 +163,15 @@ $(document).ready(function () {
         searchbyName(nameInput);
     });
     $(".search-by-cocktail").keypress(function (event) {
-        if (event.which == 13) {//Enter key pressed
-            $('#cocktail-search').click();//Trigger search button click event
-        }
+        if (event.which == 13)
+            $('#cocktail-search').click();
     });
 
-    $(".random-name").on("click", function (event) {
-        event.preventDefault();
+$(".random-name").on("click", function (event) {
+    event.preventDefault();
 
-        searchRandom();
-    });
+    searchRandom();
+});
 });
 $(".find-store").on("click", function (event) {
     event.preventDefault();
@@ -235,13 +204,13 @@ function showPosition(position) {
     var html = "<div class='card store-card col-md-6';';'><div class='card-header'><h2>Local Stores</h2></div><div class='card-body'><ul class='store-list mx-auto'>";
     for (var i = 0; i < storeListing.results.length; i++) {
 
-        //var maplink = "http://maps.google.com/maps?q=" + storeListing.results[i].position.lat + "," + storeListing.results[i].position.lon;
+
         var maplink = "http://maps.google.com/maps?q=" + storeListing.results[i].poi.name + "/@@" + storeListing.results[i].position.lat + "," + storeListing.results[i].position.lon;
         html += "<div class='card store-list-card mx-auto'><strong><a href='" + maplink + "'+ target='_blank'>" + storeListing.results[i].poi.name +
             "</a></strong><br/>" + storeListing.results[i].address.freeformAddress +
             " </div>";
-            
-           
+
+
     }
 
     html += "</ul>";
@@ -269,26 +238,26 @@ $(".search-cocktail-btn").click(function () {
     $(".card-text").hide();
 
 
- });
+});
 
- $("#random-btn").click(function () {
+$("#random-btn").click(function () {
     $(".main-page-img").hide();
     $(".user-choice-cocktail").hide();
     $(".cocktail-ingredient").show();
     $(".card-text").hide();
 
- });
+});
 
- $("#store-locator-btn").click(function () {
+$("#store-locator-btn").click(function () {
     $(".main-page-img").hide();
     $(".user-choice-cocktail").hide();
     $(".cocktail-ingredient").show();
     $(".card-text").hide();
 
- });
+});
 
 
 
- $(".search-cocktail-btn").click(function () {
-     $(".main-page-card").css('height', '90px')
- });
+$(".search-cocktail-btn").click(function () {
+    $(".main-page-card").css('height', '90px')
+});
