@@ -129,3 +129,7 @@ body {
 	
 	animation: gradient 15s ease infinite;
 }
+.row {
+    margin-right: 1px;
+    margin-left: 1px;
+}
