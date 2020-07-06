@@ -1,4 +1,3 @@
-//Search by cocktail name hide
 $(".user-choice-cocktail").hide();
 $("#cocktail-ingredient-btn").click(function () {
     $(".user-choice-cocktail").show();
@@ -26,9 +25,6 @@ $(document).ready(function () {
                 var drinkName = response.drinks[i].strDrink;
                 var image = response.drinks[i].strDrinkThumb;
                 var video = response.drinks[i].strVideo;
-
-
-
 
                 $("#deck").append(cardBuilder
                     (instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2, response.drinks[i].strMeasure3,
@@ -132,9 +128,7 @@ $(document).ready(function () {
         return cardstring;
     }
 
-
     var x = document.getElementById("deck");
-
 
     function searchRandom() {
         $("#deck").empty();
@@ -175,7 +169,6 @@ $(document).ready(function () {
         })
     }
 
-
     $("#cocktail-search").on("keypress click", function (event) {
         event.preventDefault();
         var nameInput = $(".search-by-cocktail").val().trim()
@@ -196,7 +189,6 @@ $(".find-store").on("click", function (event) {
     getLocation();
 });
 
-
 const x = document.getElementById("deck");
 
 function getLocation() {
@@ -206,7 +198,6 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-
 
 function showPosition(position) {
     const lat = position.coords.latitude;
@@ -221,19 +212,14 @@ function showPosition(position) {
     var html = "<div class='card store-card col-md-6';';'><div class='card-header'><h2>Local Stores</h2></div><div class='card-body'><ul class='store-list mx-auto'>";
     for (var i = 0; i < storeListing.results.length; i++) {
 
-
         var maplink = "http://maps.google.com/maps?q=" + storeListing.results[i].poi.name + "/@@" + storeListing.results[i].position.lat + "," + storeListing.results[i].position.lon;
         html += "<div class='card store-list-card mx-auto'><strong><a href='" + maplink + "'+ target='_blank'>" + storeListing.results[i].poi.name +
             "</a></strong><br/>" + storeListing.results[i].address.freeformAddress +
             " </div>";
-
-
     }
-
     html += "</ul>";
     x.innerHTML = "";
     x.innerHTML = html;
-
 }
 
 function httpGet(theUrl) {
@@ -241,10 +227,4 @@ function httpGet(theUrl) {
     xmlHttp.open("GET", theUrl, false);
     xmlHttp.send(null);
     return xmlHttp.responseText;
-
 }
-
-
-
-//Show & Hide functions on click 
-
