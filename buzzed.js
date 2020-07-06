@@ -6,8 +6,7 @@ $("#cocktail-ingredient-btn").click(function () {
 });
 $(document).ready(function () {
     var apiKey = "9973533"
-    var popularDrinkUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/popular.php";
-    var randomUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/randomselection.php";
+  
 
     function searchbyName(nameInput) {
         var drinkNameUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/search.php?s=" + nameInput;
@@ -20,11 +19,11 @@ $(document).ready(function () {
             $("#deck").empty();
             for (var i = 0; i <= response.drinks.length; i++) {
 
-                var glass = response.drinks[i].strGlass;
+               
                 var instruction = response.drinks[i].strInstructions;
                 var drinkName = response.drinks[i].strDrink;
                 var image = response.drinks[i].strDrinkThumb;
-                var video = response.drinks[i].strVideo;
+                
 
                 $("#deck").append(cardBuilder
                     (instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2, response.drinks[i].strMeasure3,
@@ -46,7 +45,7 @@ $(document).ready(function () {
         var cardstring = ' <div style="width: 24rem;" class="card results-card"><img class="card-img" src="' + ximgUrl +
             '"alt="Drink"><div class="card-body"><h5 class="card-title">' + xdrinkName + '</h5><p class="card-text">' + xinstructions + '</p>';
 
-        var ingreds = '<ul class="list-group list-group-flush ingredients-list">';
+        
         var fact = "";
         if (i1 != null && m1 != null) {
             fact += "<li class='list-group-item'>" + m1 + " " + i1 + "</li>"
@@ -145,10 +144,7 @@ $(document).ready(function () {
                 var drinkName = response.drinks[i].strDrink;
                 var image = response.drinks[i].strDrinkThumb;
                 var video = response.drinks[i].strVideo;
-                var drinkNameEl = $("<h1>").text("Name of the drink :" + drinkName);
-                var glassEl = $("<div>").text("Best glass for this drink :" + glass)
-                var instructionEl = $("<div>").text("Instruction :" + instruction);
-                var imageUrl = $("<img>").attr("src", image);
+             
 
                 $("#deck").append(cardBuilder(
                     instruction, drinkName, image, response.drinks[i].strMeasure1, response.drinks[i].strMeasure2,
