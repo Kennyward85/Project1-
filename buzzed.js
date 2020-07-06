@@ -12,7 +12,6 @@ $(document).ready(function () {
 
     function searchbyName(nameInput) {
         var drinkNameUrl = "https://www.thecocktaildb.com/api/json/v2/" + apiKey + "/search.php?s=" + nameInput;
-        console.log(nameInput);
         $.ajax({
             type: "GET",
             url: drinkNameUrl
@@ -129,15 +128,8 @@ $(document).ready(function () {
             fact += "<li class='list-group-item'>" + " " + i15 + "</li>"
         }
         fact += "</ul>";
-
         cardstring += fact + "</div>";
-
-
-
-
-
         return cardstring;
-
     }
 
 
@@ -154,9 +146,6 @@ $(document).ready(function () {
         }).then(function (response) {
             $("#contents").empty();
             for (var i = 0; i <= response.drinks.length; i++) {
-                console.log(response);
-
-
                 var glass = response.drinks[i].strGlass;
                 var instruction = response.drinks[i].strInstructions;
                 var drinkName = response.drinks[i].strDrink;
@@ -199,13 +188,11 @@ $(document).ready(function () {
 
     $(".random-name").on("click", function (event) {
         event.preventDefault();
-
         searchRandom();
     });
 });
 $(".find-store").on("click", function (event) {
     event.preventDefault();
-
     getLocation();
 });
 
