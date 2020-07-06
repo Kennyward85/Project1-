@@ -104,7 +104,7 @@ body {
 	}
 }
 .card-body {
-    background:  #ee7752;
+    background:  #ee7752; 
 }
 .store-list-card {
     background:  #23d5ab;
@@ -130,3 +130,20 @@ body {
 .results-card {
   border: none;
 }
+.btn-outline-secondary {
+    background:  #23d5ab;
+    color: black;
+}
+.btn-outline-secondary:hover {
+  background:  #23a6d5;
+}
+.btn-outline-secondary:visited{
+    background:  #23d5ab;
+}
+.btn-outline-secondary:active{
+    background:  #23a6d5;
+}
+.btn-outline-secondary:focus{
+    background:  #23d5ab;
+}
+
