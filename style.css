@@ -4,8 +4,6 @@
 
 .display-4 {
     text-align: center;
-    font-size: 3.5rem;
-    font-weight: bolder;
 }  
 .logo {
    align-content: space-between;
@@ -129,4 +127,9 @@ body {
 }
 .results-card {
   border: none;
+}
+p {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-color: #545353;
 }
