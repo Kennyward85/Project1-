@@ -145,6 +145,14 @@ body {
     background:  #23d5ab;
 }
 
+.btn.disabled, .btn:disabled {
+    opacity: 1;
+}
+
+.btn-outline-secondary:disabled{
+    background:  #23d5ab;
+    color: black;
+}
 p {
     font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
