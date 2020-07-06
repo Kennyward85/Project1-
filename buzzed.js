@@ -179,7 +179,11 @@ $(document).ready(function () {
     $("#cocktail-search").on("keypress click", function (event) {
         event.preventDefault();
         var nameInput = $(".search-by-cocktail").val().trim()
+        if (nameInput == "") {
+            $("#cocktail-search").prop("disabled", true)
+        } else {
         searchbyName(nameInput);
+        }
     });
     $(".search-by-cocktail").keypress(function (event) {
         if (event.which == 13)
