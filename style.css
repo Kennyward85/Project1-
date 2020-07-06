@@ -1,7 +1,6 @@
 .jumbotron {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	
-}
+	}
 
 .display-4 {
     text-align: center;
@@ -16,10 +15,6 @@
     height: 382px;
     width: 382px;
 }
-p {
-
-}
-
 
 
 .flex {
@@ -42,7 +37,6 @@ p {
 .btn-secondary {
     background:  #23d5ab;
     color: black;
-    
 }
 .btn-secondary:hover {
   background:  #23a6d5;
@@ -53,13 +47,11 @@ p {
 .btn-secondary:active{
     background:  #23a6d5;
 }
-
 .btn-secondary:focus{
     background:  #23d5ab;
 }
 .custom {
     width: 250px;
-  
 }
 
 #deck {
@@ -82,7 +74,7 @@ p {
 .store-list-card {
     margin-bottom: 15px;
     height: auto;
-    width: 30rem;
+   
     text-align: center;
     padding: 10px;
 }
@@ -126,10 +118,15 @@ body {
 .card-header {
     text-align: center;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	
 	animation: gradient 15s ease infinite;
 }
 .row {
     margin-right: 1px;
     margin-left: 1px;
+}
+.main-page-card {
+    border: none;
+}
+.results-card {
+  border: none;
 }
