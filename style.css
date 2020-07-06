@@ -1,26 +1,21 @@
 .jumbotron {
-
-}
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	}
 
 .display-4 {
-
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bolder;
+}  
+.logo {
+   align-content: space-between;
 }
 
-p {
-
+ img {
+    height: 382px;
+    width: 382px;
 }
 
-Spirit-Img {
-
-}
-
-Ingredient-Img {
-
-}
-
-Store-Img {
-    
-}
 
 .flex {
     display: flex;
@@ -39,11 +34,24 @@ Store-Img {
     justify-content: space-between;
 }
 
-
-
+.btn-secondary {
+    background:  #23d5ab;
+    color: black;
+}
+.btn-secondary:hover {
+  background:  #23a6d5;
+}
+.btn-secondary:visited{
+    background:  #23d5ab;
+}
+.btn-secondary:active{
+    background:  #23a6d5;
+}
+.btn-secondary:focus{
+    background:  #23d5ab;
+}
 .custom {
     width: 250px;
-  
 }
 
 #deck {
@@ -66,7 +74,7 @@ Store-Img {
 .store-list-card {
     margin-bottom: 15px;
     height: auto;
-    width: 30rem;
+   
     text-align: center;
     padding: 10px;
 }
@@ -77,4 +85,48 @@ Store-Img {
 }
 .ingredients-list {
     margin-bottom: 20px;
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.card-body {
+    background:  #ee7752;
+}
+.store-list-card {
+    background:  #23d5ab;
+}
+.list-group-item {
+    background:  #23d5ab;
+}
+.store-card {
+    background:  #ee7752; 
+}
+.card-header {
+    text-align: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	animation: gradient 15s ease infinite;
+}
+.row {
+    margin-right: 1px;
+    margin-left: 1px;
+}
+.main-page-card {
+    border: none;
+}
+.results-card {
+  border: none;
 }
