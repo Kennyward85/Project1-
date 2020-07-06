@@ -169,7 +169,7 @@ $(document).ready(function () {
         event.preventDefault();
         var nameInput = $(".search-by-cocktail").val().trim()
         if (nameInput == "") {
-            $("#cocktail-search").prop("disabled", true)
+            $("#deck").html("");
         } else {
         searchbyName(nameInput);
         }
